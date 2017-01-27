@@ -1,0 +1,74 @@
+#just strings
+
+f = "First"
+l = "Last"
+
+puts f + l
+puts l + f
+puts  f + " " + l 
+puts (f + " " + l + " ")*2
+
+puts "#{f}#{l}"
+puts "#{l}#{f}"
+puts "#{f} #{l}"
+puts "#{l} #{f}"
+puts "#{l} #{f} "*2
+
+#names 
+
+name_1 = "Megan Smith"
+name_2 = "Todd Park"
+
+puts name_1[0..5]
+puts name_1[0..-6]
+#no, it would not work for name_2 string because the indices don't match
+puts name_2[0] + name_2[5]
+
+#just integers
+
+a = 12
+b = 65
+c = 31
+d = 98
+
+puts average = (a + b + c + d)/4
+
+numbers = [a,b,c,d]
+total = 0
+average = 0
+numbers.each{|x| total += x}
+puts "Average is #{total/numbers.length}"
+puts "Expression evaluates to #{a + b * c / d}"
+#putting () can change the order of operations. Keep in mind expressions are evaluated from right --> left
+
+#people
+
+a = "Ezra"
+b = "Ada"
+c = "Yukihiro"
+d = "Grace"
+
+names = [a, b, c, d]
+total = 0
+names.each{|x| total += x.length}
+average_length = total/names.length
+
+puts "The total letters are #{total} and the average length is #{average_length}"
+
+#Happy Birthday
+
+puts "What's you age today as an integer?"
+age = gets.chomp
+puts "Happy " + "happy "*(age.to_i-1) + "birthday!"
+
+#string compression
+
+puts "What's the name you would like to string compress?"
+name = gets.chomp
+if name.length >= 3
+print name[0]
+print (name.length - 2)
+print name[-1]
+else 
+    puts "Your string is not long enough to compress!"
+end
