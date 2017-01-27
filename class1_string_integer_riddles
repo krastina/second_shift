@@ -1,0 +1,111 @@
+example = "hello World!"
+puts example
+
+# How can I tell how many characters are in a string? Do spaces count?
+puts "Length: #{example.length}"
+
+# How can I capitalize the first character of a string? What happens if it is a number?
+puts "Capitalized: #{example.capitalize}"
+
+# How can I turn a string backwards?
+puts "Reversed: #{example.reverse!}" 
+
+word_1 = "rat"
+word_2 = "cheese" 
+word_3 = "RAT"
+word_4 = "Rat" 
+word_5 = "tat"
+word_6 = "Rattle"
+
+# How can I tell if two words have the same number of characters?
+print "rat and cheese are palidromes: "
+puts word_1.length == word_2.length
+
+# How can I tell if a word has all capital letters?
+print "rat has all capital letters: "
+puts word_1.upcase == word_1
+print "RAT has all capital letters: "
+puts word_3.upcase == word_3
+
+# How can I tell if a word has all lower case letters?
+print "rat has all lowercase letters: "
+puts word_1.downcase == word_1
+print "Rat has all lowercase letters: "
+puts word_4.downcase == word_4
+
+# How can I tell if a word is a palindrome? (The word is the same forwards and backwards.)
+print "rat is a palindrome: "
+puts word_1.reverse == word_1
+print "tat is a palindrome: "
+puts word_5.reverse == word_5
+
+# How can I tell if a sentence is the same forwards and backwards? (ignoring spaces and punctuation)
+sentence_1 = "cat am I ma cat"
+sentence_2 = "tat am I ma tat"
+print "cat am I ma cat is the same backwards and forewards: "
+puts sentence_1.reverse == sentence_1
+print "tat am I ma tat is the same backwards and forewards: "
+puts sentence_2.reverse == sentence_2
+
+# How can I replace an occurrence of a single character in a string with another character?
+print "a replaced by u for rat: "
+puts word_1.sub('a', 'u')
+
+# How can I replace ALL occurrences of a single character in a string with another character?
+print "t replaced by ww in rattle: "
+puts word_6.gsub('t', "ww")
+
+# How do I insert 5 asterisks at the start of a string? What about at the end of a string? What about x asterisks?
+my_string = "Hello"
+print "Hello prepended with 5 *: "
+puts my_string.prepend("*****")
+my_string = "Hello"
+print "Hello ended with 5 *: "
+puts my_string += "*****"
+
+# What if I wanted to have a string that's four characters long, but I want to make a big string thats 14 characters in length, with the original string in the middle, with asterisks on either side of the original string to make it reach the desired length?
+string_1 = "abcd"
+puts "abcd with 5 * at beginning and and end: "
+# string_1 = string_1.prepend("*****")
+# puts string_1 += "*****" 
+lol = string_1.prepend("*****") + "*****"
+puts lol
+
+# What if I wanted to replace the padding character with spaces? And a variable total length?
+string_2 = "kitten" 
+puts string_2.ljust(10)
+puts string_2.ljust(10, "1234")
+
+# What are two ways in which you can determine if an integer is odd? (Or even.)
+integer = 7 
+if integer % 2 == 0
+    puts "Integer is even!"
+else 
+    puts "Integer is odd!"
+end 
+
+puts "Seven is even: #{7.even?}"
+puts "Four is even: #{4.even?}"
+
+# How can I convert a string into a number?
+print "String 3 is an integer: "
+puts "3".is_a? Integer
+print "String 3 to_i is an integer: "
+puts "3".to_i.is_a? Integer
+# will give 0 if the string doesn't contain integers
+print "Hello string to_i is an integer: "
+puts "Hello".to_i.is_a? Integer
+
+# How can you tell if a number is a palindrome? (303, 1221, 123321)
+number_1 = "303"
+print "303 is a palindrome: "
+puts number_1.reverse.to_s == number_1.to_s
+
+# How can you tell if a number is divisible by 3? By 9? By x?
+number_2 = 12
+if number_2 % 3 == 0 
+    puts "Number divisible by 3!"
+end 
+if number_2 % 9 == 0 
+    puts "Numnber also divisible by 9!"
+end 
